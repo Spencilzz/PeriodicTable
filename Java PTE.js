@@ -90,7 +90,7 @@ var periodicTableMainData = [
     {number: 117, letter: "Uus", name: "(Ununseptium)", mass:(294), period:7, group:17},
     {number: 118, letter: "Uuo", name: "(Ununoctium)", mass:(294), period:7, group:18}
 
-]
+];
 
 var periodicTableSecondData = [
     {number: 57-71, letter: "", name: "", mass:0, period:1, group:1},
@@ -125,8 +125,8 @@ var periodicTableSecondData = [
     {number: 101, letter: "Md", name: "Mendelevium", mass:(258), period:2, group:14},
     {number: 102, letter: "No", name: "Nobelium", mass:(259), period:2, group:15},
     {number: 103, letter: "Lr", name: "Lawrencium", mass:(262), period:2, group:16}
-]
+];
 
 for (var position = 0; position < periodicTableMainData.length; position++){
-    console.log(periodicTableMainData[position])
+    console.log(periodicTableMainData[position]);
 }
