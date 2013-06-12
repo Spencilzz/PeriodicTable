@@ -127,6 +127,22 @@ var periodicTableSecondData = [
     {number: 103, letter: "Lr", name: "Lawrencium", mass:(262), period:2, group:16}
 ];
 
+/*
+ The multidimensional array looks like this:
+ 18 across ->
+ 7 down v
+
+                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
+                        | H  |    |  |  |  |  |  |  |  |  |  |  |   |   |   |   |   | He |
+                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
+                        | Li | Be |  |  |  |  |  |  |  |  |  |  | B | C | N | O | F | Ne |
+                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
+
+ and so on down the whole array. The blank spots will be left to indicate to the final javascript code that that
+ particular table cell will not have an element in it.
+ */
+
+
 // The variable to generate the data to be printed in the table, as there are spaces for places where there are not
 // elements
 var htmlToPrint = new Array(7);
