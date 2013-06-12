@@ -136,16 +136,18 @@ for(i = 0; i < 2; i++){
 for(i = 0; i < 2; i++){
     console.log("row" + row++);
     for(j = 0; j < 8; j++){
-        console.log(myPTE[el].letter);
+        console.log(myPTE[el++].letter);
     }
 }
 
 for(i = 0; i < 4; i++){
     console.log("row" + row++);
     for(j = 0; j < 18; j++){
-        console.log(myPTE[el].letter);
+        console.log(myPTE[el++].letter);
     }
-}
+};
+
+var el = 0
 
 for(i = 0; i < 2; i++){
     console.log("row" + row++);
@@ -158,3 +160,4 @@ for(i = 0; i < 2; i++){
 
 
 
+                                                                                                      4
