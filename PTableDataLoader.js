@@ -25,7 +25,7 @@ var periodicTableMainData = [
     {number: 24, letter: "Cr", name: "Chromium", mass:51.996, period:4, group:6},
     {number: 25, letter: "Mn", name: "Manganese", mass:54.938, period:4, group:7},
     {number: 26, letter: "Fe", name: "Iron", mass:55.845, period:4, group:8},
-    {number: 27, letter: "Co", name: "Cobolt", mass:58.933, period:4, group:9},
+    {number: 27, letter: "Co", name: "Cobalt", mass:58.933, period:4, group:9},
     {number: 28, letter: "Ni", name: "Nickel", mass:58.693, period:4, group:10},
     {number: 29, letter: "Cu", name: "Copper", mass:63.546, period:4, group:11},
     {number: 30, letter: "Zn", name: "Zinc", mass:65.380, period:4, group:12},
