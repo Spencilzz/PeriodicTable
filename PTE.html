@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sam's PTE</title>
+    <style type="text/css">
+        table {
+            border-style: solid;
+            border-width: 2px;
+            width: 100%;
+        }
+        tr {
+            text-align: center;
+        }
+        .elmID {
+            font-size:24px;
+            font-weight: bold;
+        }
+        td {
+            border-style: none;
+        }
+        .elementBox{
+            border: 1px solid #000;
+            font-size: 12px;
+            width: 5%;
+        }
+        .groupBox{
+            border: 1px solid #000;
+            font-size: 12px;
+            height: 2%;
+        }
+        .periodBox{
+            border: 1px solid #000;
+            font-size: 12px;
+            width: 2%;
+            /*border: 1px solid #000;
+            width: 5px;
+            font-size: 12px;*/
+        }
+        .bigData {
+            border: 5px solid #000;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".elementBox").click(function(){
+                var element = $(this).html();
+                if( element !== undefined){
+                    ///
+                    console.log(element);
+                }
+            });
+            $(".elementBox").hover(function(){
+                var element = $(this).html();
+                $(".bigData").html(element);
+            }, function(){
+
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<h1>Periodic Table</h1>
+<table border="5">
+    <tr><td> </td>
+        <td class="groupBox">1</td>
+        <td class="groupBox">2</td>
+        <td class="groupBox">3</td>
+        <td class="groupBox">4</td>
+        <td class="groupBox">5</td>
+        <td class="groupBox">6</td>
+        <td class="groupBox">7</td>
+        <td class="groupBox">8</td>
+        <td class="groupBox">9</td>
+        <td class="groupBox">10</td>
+        <td class="groupBox">11</td>
+        <td class="groupBox">12</td>
+        <td class="groupBox">13</td>
+        <td class="groupBox">14</td>
+        <td class="groupBox">15</td>
+        <td class="groupBox">16</td>
+        <td class="groupBox">17</td>
+        <td class="groupBox">18</td>
+    </tr>
+
+    <tr>
+        <td class="periodBox">1</td>
+        <td class="elementBox">1<br /><div class="elmID">H</div>Hydrogen<br />1.008</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="elementBox">2<br /><div class="elmID">He</div>Helium<br />4.003</td>
+
+    </tr>
+    <tr>
+        <td class="periodBox">2</td>
+        <td class="elementBox">3<br /><div class="elmID">Li</div>Lithium<br />6.941</td>
+        <td class="elementBox">4<br /><div class="elmID">Be</div>Beryllium<br />9.012</td>
+        <td></td>
+        <td class="bigData elementBox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="elementBox">5<br /><div class="elmID">B</div>Boron<br />10.811</td>
+        <td class="elementBox">6<br /><div class="elmID">C</div>Carbon<br />12.011</td>
+        <td class="elementBox">7<br /><div class="elmID">N</div>Nitrogen<br />14.007</td>
+        <td class="elementBox">8<br /><div class="elmID">O</div>Oxygen<br />15.999</td>
+        <td class="elementBox">9<br /><div class="elmID">F</div>Fluorine<br />18.998</td>
+        <td class="elementBox">10<br /><div class="elmID">Ne</div>Neon<br />20.180</td>
+
+    </tr>
+    <tr>
+        <td class="periodBox">3</td>
+        <td class="elementBox">11<br /><div class="elmID">Na</div>Sodium<br />22.990</td>
+        <td class="elementBox">12<br /><div class="elmID">Mg</div>Magnesium<br />24.305</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="elementBox">13<br /><div class="elmID">Al</div>Aluminium<br />26.982</td>
+        <td class="elementBox">14<br /><div class="elmID">Si</div>Silicon<br />28.086</td>
+        <td class="elementBox">15<br /><div class="elmID">P</div>Phosphorous<br />30.974</td>
+        <td class="elementBox">16<br /><div class="elmID">S</div>Sulfur<br />32.065</td>
+        <td class="elementBox">17<br /><div class="elmID">Cl</div>Chlorine<br />35.453</td>
+        <td class="elementBox">18<br /><div class="elmID">Ar</div>Argon<br />39.948</td>
+    </tr>
+    <tr>
+        <td class="periodBox">4</td>
+        <td class="elementBox">19<br /><div class="elmID">K</div>Potassium<br />39.098</td>
+        <td class="elementBox">20<br /><div class="elmID">Ca</div>Calcium<br />40.078</td>
+        <td class="elementBox">21<br /><div class="elmID">Sc</div>Scandium<br />44.956</td>
+        <td class="elementBox">22<br /><div class="elmID">Ti</div>Titanium<br />47.867</td>
+        <td class="elementBox">23<br /><div class="elmID">V</div>Vanadium<br />50.942</td>
+        <td class="elementBox">24<br /><div class="elmID">Cr</div>Chromium<br />51.996</td>
+        <td class="elementBox">25<br /><div class="elmID">Mn</div>Manganese<br />54.938</td>
+        <td class="elementBox">26<br /><div class="elmID">Fe</div>Iron<br />55.845</td>
+        <td class="elementBox">27<br /><div class="elmID">Co</div>Cobolt<br />58.933</td>
+        <td class="elementBox">28<br /><div class="elmID">Ni</div>Nickel<br />58.693</td>
+        <td class="elementBox">29<br /><div class="elmID">Cu</div>Copper<br />63.546</td>
+        <td class="elementBox">30<br /><div class="elmID">Zn</div>Zinc<br />65.380</td>
+        <td class="elementBox">31<br /><div class="elmID">Ga</div>Gallium<br />69.723</td>
+        <td class="elementBox">32<br /><div class="elmID">Ge</div>Germanium<br />72.640</td>
+        <td class="elementBox">33<br /><div class="elmID">As</div>Arsenic<br />74.922</td>
+        <td class="elementBox">34<br /><div class="elmID">Se</div>Selenium<br />78.960</td>
+        <td class="elementBox">35<br /><div class="elmID">Br</div>Bromine<br />79.904</td>
+        <td class="elementBox">36<br /><div class="elmID">Kr</div>Krypton<br />83.798</td>
+
+    </tr>
+    <tr>
+        <td class="periodBox">5</td>
+        <td class="elementBox">37<br /><div class="elmID">Rb</div>Rubidium<br />85.468</td>
+        <td class="elementBox">38<br /><div class="elmID">Sr</div>Strontium<br />87.620</td>
+        <td class="elementBox">39<br /><div class="elmID">Y</div>Yttrium<br />88.906</td>
+        <td class="elementBox">40<br /><div class="elmID">Zr</div>Zirconium<br />91.224</td>
+        <td class="elementBox">41<br /><div class="elmID">Nb</div>Niobium<br />92.906</td>
+        <td class="elementBox">42<br /><div class="elmID">Mo</div>Molybdenum<br />95.960</td>
+        <td class="elementBox">43<br /><div class="elmID">Tc</div>Technetium<br />(97.907)</td>
+        <td class="elementBox">44<br /><div class="elmID">Ru</div>Ruthenium<br />101.070</td>
+        <td class="elementBox">45<br /><div class="elmID">Rh</div>Rhodium<br />102.906</td>
+        <td class="elementBox">46<br /><div class="elmID">Pd</div>Palladium<br />106.42</td>
+        <td class="elementBox">47<br /><div class="elmID">Ag</div>Silver<br />107.868</td>
+        <td class="elementBox">48<br /><div class="elmID">Cd</div>Cadmium<br />112.411</td>
+        <td class="elementBox">49<br /><div class="elmID">In</div>Indium<br />114.818</td>
+        <td class="elementBox">50<br /><div class="elmID">Sn</div>Tin<br />118.710</td>
+        <td class="elementBox">51<br /><div class="elmID">Sb</div>Antimony<br />121.760</td>
+        <td class="elementBox">52<br /><div class="elmID">Te</div>Tellurium<br />127.600</td>
+        <td class="elementBox">53<br /><div class="elmID">I</div>Iodine<br />126.904</td>
+        <td class="elementBox">54<br /><div class="elmID">Xe</div>Xenon<br />131.293</td>
+    </tr>
+    <tr>
+        <td class="periodBox">6</td>
+        <td class="elementBox">55<br /><div class="elmID">Cs</div>Cesium<br />132.905</td>
+        <td class="elementBox">56<br /><div class="elmID">Ba</div>Barium<br />137.327</td>
+        <td class="elementBox">57-71<br />Lathanides</td>
+        <td class="elementBox">72<br /><div class="elmID">Hf</div>Hafnium<br />178.490</td>
+        <td class="elementBox">73<br /><div class="elmID">Ta</div>Tantalum<br />180.948</td>
+        <td class="elementBox">74<br /><div class="elmID">W</div>Tungsten<br />183.840</td>
+        <td class="elementBox">75<br /><div class="elmID">Re</div>Rhenium<br />186.207</td>
+        <td class="elementBox">76<br /><div class="elmID">Os</div>Osmium<br />190.230</td>
+        <td class="elementBox">77<br /><div class="elmID">Ir</div>Iridium<br />192.217</td>
+        <td class="elementBox">78<br /><div class="elmID">Pt</div>Platinum<br />195.084</td>
+        <td class="elementBox">79<br /><div class="elmID">Au</div>Gold<br />196.967</td>
+        <td class="elementBox">80<br /><div class="elmID">Hg</div>Mercury<br />200.590</td>
+        <td class="elementBox">81<br /><div class="elmID">Tl</div>Thallium<br />204.383</td>
+        <td class="elementBox">82<br /><div class="elmID">Pb</div>Lead<br />207.200</td>
+        <td class="elementBox">83<br /><div class="elmID">Bi</div>Bismuth<br />208.980</td>
+        <td class="elementBox">84<br /><div class="elmID">Po</div>Polonium<br />(209.982)</td>
+        <td class="elementBox">85<br /><div class="elmID">At</div>Astatine<br />(209.987)</td>
+        <td class="elementBox">86<br /><div class="elmID">Rn</div>Radon<br />(222.018)</td>
+    </tr>
+    <tr>
+        <td class="periodBox">7</td>
+        <td class="elementBox">87<br /><div class="elmID">Fr</div>Francium<br />(223)</td>
+        <td class="elementBox">88<br /><div class="elmID">Ra</div>Radium<br />(226)</td>
+        <td class="elementBox">89-103<br />Actinides</td>
+        <td class="elementBox">104<br /><div class="elmID">Rf</div>Rutherfordium<br />(267)</td>
+        <td class="elementBox">105<br /><div class="elmID">Db</div>Dubnium<br />(268)</td>
+        <td class="elementBox">106<br /><div class="elmID">Sg</div>Seaborgium<br />(271)</td>
+        <td class="elementBox">107<br /><div class="elmID">Bh</div>Bohrium<br />(272)</td>
+        <td class="elementBox">108<br /><div class="elmID">Hs</div>Hassium<br />(270)</td>
+        <td class="elementBox">109<br /><div class="elmID">Mt</div>Meitnerium<br />(276)</td>
+        <td class="elementBox">110<br /><div class="elmID">Ds</div>Darmstadium<br />(281)</td>
+        <td class="elementBox">111<br /><div class="elmID">Rg</div>Roentgenium<br />(280)</td>
+        <td class="elementBox">112<br /><div class="elmID">Cn</div>Copernicium<br />(285)</td>
+        <td class="elementBox">113<br /><div class="elmID">Uut</div>(Ununtrium)<br />(284)</td>
+        <td class="elementBox">114<br /><div class="elmID">Fl</div>Flerovium<br />(289)</td>
+        <td class="elementBox">115<br /><div class="elmID">Uup</div>(Ununpentium)<br />(288)</td>
+        <td class="elementBox">116<br /><div class="elmID">Lv</div>Livermorium<br />(293)</td>
+        <td class="elementBox">117<br /><div class="elmID">Uus</div>(Ununseptium)<br />(294)</td>
+        <td class="elementBox">118<br /><div class="elmID">Uuo</div>(Ununoctium)<br />(294)</td>
+    </tr>
+</table>
+<table border="5">
+    <tr>
+        <td class="elementBox">57-71</td>
+        <td class="elementBox">57<br /><div class="elmID">La</div>Lanthanum<br />138.905</td>
+        <td class="elementBox">58<br /><div class="elmID">Ce</div>Cerium<br />140.116</td>
+        <td class="elementBox">59<br /><div class="elmID">Pr</div>Praseodymium<br />140.908</td>
+        <td class="elementBox">60<br /><div class="elmID">Nd</div>Neodymium<br />144.242</td>
+        <td class="elementBox">61<br /><div class="elmID">Pm</div>Promethium<br />(145)</td>
+        <td class="elementBox">62<br /><div class="elmID">Sm</div>Samarium<br />150.360</td>
+        <td class="elementBox">63<br /><div class="elmID">Eu</div>Europium<br />151.964</td>
+        <td class="elementBox">64<br /><div class="elmID">Gd</div>Gadolinium<br />157.250</td>
+        <td class="elementBox">65<br /><div class="elmID">Tb</div>Terbium<br />158.925</td>
+        <td class="elementBox">66<br /><div class="elmID">Dy</div>Dysprosium<br />162.500</td>
+        <td class="elementBox">67<br /><div class="elmID">Ho</div>Holmium<br />164.930</td>
+        <td class="elementBox">68<br /><div class="elmID">Er</div>Erbium<br />167.259</td>
+        <td class="elementBox">69<br /><div class="elmID">Tm</div>Thulium<br />168.934</td>
+        <td class="elementBox">70<br /><div class="elmID">Yb</div>Ytterbium<br />173.054</td>
+        <td class="elementBox">71<br /><div class="elmID">Lu</div>Lutetium<br />174.967</td>
+
+    </tr>
+    <tr>
+    <tr>
+        <td class="elementBox">89-103</td>
+        <td class="elementBox">89<br /><div class="elmID">Ac</div>Actinium<br />(227)</td>
+        <td class="elementBox">90<br /><div class="elmID">Th</div>Thorium<br />232.038</td>
+        <td class="elementBox">91<br /><div class="elmID">Pa</div>Protactinium<br />231.036</td>
+        <td class="elementBox">92<br /><div class="elmID">U</div>Uranium<br />238.029</td>
+        <td class="elementBox">93<br /><div class="elmID">Np</div>Neptunium<br />(273)</td>
+        <td class="elementBox">94<br /><div class="elmID">Pu</div>Plutonium<br />(244)</td>
+        <td class="elementBox">95<br /><div class="elmID">Am</div>Americium<br />(243)</td>
+        <td class="elementBox">96<br /><div class="elmID">Cm</div>Curium<br />(247)</td>
+        <td class="elementBox">97<br /><div class="elmID">Bk</div>Berkelium<br />(247)</td>
+        <td class="elementBox">98<br /><div class="elmID">Cf</div>Californium<br />(251)</td>
+        <td class="elementBox">99<br /><div class="elmID">Es</div>Einsteinium<br />(252)</td>
+        <td class="elementBox">100<br /><div class="elmID">Fm</div>Fermium<br />(257)</td>
+        <td class="elementBox">101<br /><div class="elmID">Md</div>Mendelevium<br />(258)</td>
+        <td class="elementBox">102<br /><div class="elmID">No</div>Nobelium<br />(259)</td>
+        <td class="elementBox">103<br /><div class="elmID">Lr</div>Lawrencium<br />(262)</td>
+
+    </tr>
+</table>
+
+</body>
+</html>
