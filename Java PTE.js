@@ -127,6 +127,20 @@ var periodicTableSecondData = [
     {number: 103, letter: "Lr", name: "Lawrencium", mass:(262), period:2, group:16}
 ];
 
-for (var position = 0; position < periodicTableMainData.length; position++){
-    console.log(periodicTableMainData[position]);
+// The variable to generate the data to be printed in the table, as there are spaces for places where there are not
+// elements
+var htmlToPrint = new Array(7);
+for (var i = 0; i < htmlToPrint.length; i++){
+    // Make the array multidimensional due to the square structure of the Periodic Table
+    htmlToPrint[i] = new Array(18)
 }
+
+// Go through each element in the periodicTableData array and store it in the htmlToPrint array for later printing
+for (var position = 0; position < periodicTableMainData.length; position++){
+    // Get the current element as you loop through the array of data
+    var element = periodicTableMainData[position];
+    // Store the element at a specific place in that multidimensional array
+    htmlToPrint[element.period-1][element.group-1] = element;
+}
+// Print out the array
+console.log(htmlToPrint);
