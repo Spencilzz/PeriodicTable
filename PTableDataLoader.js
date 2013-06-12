@@ -164,29 +164,29 @@ console.log(htmlToPrint);
 // Generate HTML
 
 // The array that will contain all the HTML code
-var html = "<table>"
+var html = "<table>";
 // Go through every period (downwards)
 for(var x = 0; x < htmlToPrint.length; x++){
     // Every period on the periodic table gets a new table 'row'
-    html += "<tr>"
+    html += "<tr>";
     // Loop through the second level of the array, across through all the groups
     for(var y = 0; y < htmlToPrint[x].length; y++){
         // Get the element at that specific period, group combination
         element = htmlToPrint[x][y];
         // Start a table cell in the specific row
-        html += '<td>'
+        html += '<td>';
         if (element != undefined){
             html += element.letter;
         }
         // End the cell in the specific row
-        html += '</td>'
+        html += '</td>';
     }
 
     // End the table row as all the cells have been filled
-    html += "</tr>"
+    html += "</tr>";
 }
 // Close off the table
-html += "</table>"
+html += "</table>";
 
 // Set the pTable div to the html, which should be full of the elements from the first dataset
 document.getElementById('pTable').innerHTML = html;
