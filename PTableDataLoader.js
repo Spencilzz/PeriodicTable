@@ -132,19 +132,43 @@ var periodicTableSecondData = [
  18 across ->
  7 down v
 
-                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
-                        | H  |    |  |  |  |  |  |  |  |  |  |  |   |   |   |   |   | He |
-                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
-                        | Li | Be |  |  |  |  |  |  |  |  |  |  | B | C | N | O | F | Ne |
-                        +----+----+--+--+--+--+--+--+--+--+--+--+---+---+---+---+---+----+
 
- and so on down the whole array. The blank spots will be left to indicate to the final javascript code that that
- particular table cell will not have an element in it.
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | H  |    |    |    |   |    |    |    |    |    |    |    |    |    |    |    |    | He |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Li | Be |    |    |   |    |    |    |    |    |    |    | B  | C  | N  | O  | F  | Ne |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Na | Mg |    |    |   |    |    |    |    |    |    |    | Al | Si | P  | S  | Cl | Ar |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | K  | Ca | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn | Ga | Ge | As | Se | Br | Kr |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Rb | Sr | Y  | Zr |    and so on ...
+            +----+----+----+----+
+
+
+ continued down the whole array. The blank spots will be left in the array to indicate to the final javascript
+ code that that particular table cell will not have an element in it.
+
+ IMPORTANT
+ =========
+ The first element in the array starts at 0, not 1 so the farthest element across the table would be at position 17
+ and not 18
+
+ This means, for example that:
+ H (Hydrogen) will be at position 0,0 (Period 1, Group 1).
+    You would access that through htmlToPrint[0][0]
+
+ He (Helium) will be at position 0,17 (Period 1, Group 8 or 18).
+    You would access that through htmlToPrint[0][17]
+
+ Li (Lithium) will be at position 1,0 (Period 2, Group 1).
+    You would access that through htmlToPrint[1][0]
+
+ etc.
  */
 
 
-// The variable to generate the data to be printed in the table, as there are spaces for places where there are not
-// elements
+// The variable to generate the data to be turned into table form
 var htmlToPrint = new Array(7);
 for (var i = 0; i < htmlToPrint.length; i++){
     // Make the array multidimensional due to the square structure of the Periodic Table
@@ -161,7 +185,9 @@ for (var position = 0; position < periodicTableMainData.length; position++){
 // Print out the array
 console.log(htmlToPrint);
 
-// Generate HTML
+/* ============= */
+/* Generate HTML */
+/* ============= */
 
 // The array that will contain all the HTML code
 var html = "<table>";
