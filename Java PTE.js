@@ -1,4 +1,4 @@
-var myPTE = [
+var periodicTableMainData = [
     {number: 1, letter: "H", name: "Hydrogen", mass :1.008, period:1, group:1 },
     {number: 2, letter: "He", name: "Helium", mass:4.003, period:1, group:18},
     {number: 3, letter: "Li", name: "Lithium", mass:6.941, period:2, group:1},
@@ -92,7 +92,7 @@ var myPTE = [
 
 ]
 
-var myPTE2 = [
+var periodicTableSecondData = [
     {number: 57-71, letter: "", name: "", mass:0, period:1, group:1},
     {number: 57, letter: "La", name: "Lanthanum", mass:138.905, period:1, group:2},
     {number: 58, letter: "Ce", name: "Cerium", mass:140.116, period:1, group:3},
@@ -126,33 +126,7 @@ var myPTE2 = [
     {number: 102, letter: "No", name: "Nobelium", mass:(259), period:2, group:15},
     {number: 103, letter: "Lr", name: "Lawrencium", mass:(262), period:2, group:16}
 ]
-var row = 1;
-var el = 0;
-console.log("row" + row++);
-for(i = 0; i < 2; i++){
-    console.log(myPTE[el].letter);
+
+for (var position = 0; position < periodicTableMainData.length; position++){
+    console.log(periodicTableMainData[position])
 }
-
-for(i = 0; i < 2; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 8; j++){
-        console.log(myPTE[el++].letter);
-    }
-}
-
-for(i = 0; i < 4; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 18; j++){
-        console.log(myPTE[el++].letter);
-    }
-};
-
-var el = 0
-
-for(i = 0; i < 2; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 15; j++){
-        console.log(myPTE2[el].letter);
-    }
-}
-
