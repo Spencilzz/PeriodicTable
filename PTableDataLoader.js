@@ -1,4 +1,4 @@
-var myPTE = [
+var periodicTableMainData = [
     {number: 1, letter: "H", name: "Hydrogen", mass :1.008, period:1, group:1 },
     {number: 2, letter: "He", name: "Helium", mass:4.003, period:1, group:18},
     {number: 3, letter: "Li", name: "Lithium", mass:6.941, period:2, group:1},
@@ -25,7 +25,7 @@ var myPTE = [
     {number: 24, letter: "Cr", name: "Chromium", mass:51.996, period:4, group:6},
     {number: 25, letter: "Mn", name: "Manganese", mass:54.938, period:4, group:7},
     {number: 26, letter: "Fe", name: "Iron", mass:55.845, period:4, group:8},
-    {number: 27, letter: "Co", name: "Cobolt", mass:58.933, period:4, group:9},
+    {number: 27, letter: "Co", name: "Cobalt", mass:58.933, period:4, group:9},
     {number: 28, letter: "Ni", name: "Nickel", mass:58.693, period:4, group:10},
     {number: 29, letter: "Cu", name: "Copper", mass:63.546, period:4, group:11},
     {number: 30, letter: "Zn", name: "Zinc", mass:65.380, period:4, group:12},
@@ -90,9 +90,9 @@ var myPTE = [
     {number: 117, letter: "Uus", name: "(Ununseptium)", mass:(294), period:7, group:17},
     {number: 118, letter: "Uuo", name: "(Ununoctium)", mass:(294), period:7, group:18}
 
-]
+];
 
-var myPTE2 = [
+var periodicTableSecondData = [
     {number: 57-71, letter: "", name: "", mass:0, period:1, group:1},
     {number: 57, letter: "La", name: "Lanthanum", mass:138.905, period:1, group:2},
     {number: 58, letter: "Ce", name: "Cerium", mass:140.116, period:1, group:3},
@@ -125,39 +125,94 @@ var myPTE2 = [
     {number: 101, letter: "Md", name: "Mendelevium", mass:(258), period:2, group:14},
     {number: 102, letter: "No", name: "Nobelium", mass:(259), period:2, group:15},
     {number: 103, letter: "Lr", name: "Lawrencium", mass:(262), period:2, group:16}
-]
-var row = 1;
-var el = 0;
-console.log("row" + row++);
-for(i = 0; i < 2; i++){
-    console.log(myPTE[el].letter);
+];
+
+/*
+ The multidimensional array looks like this:
+ 18 across ->
+ 7 down v
+
+
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | H  |    |    |    |   |    |    |    |    |    |    |    |    |    |    |    |    | He |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Li | Be |    |    |   |    |    |    |    |    |    |    | B  | C  | N  | O  | F  | Ne |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Na | Mg |    |    |   |    |    |    |    |    |    |    | Al | Si | P  | S  | Cl | Ar |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | K  | Ca | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn | Ga | Ge | As | Se | Br | Kr |
+            +----+----+----+----+---+----+----+----+----+----+----+----+----+----+----+----+----+----+
+            | Rb | Sr | Y  | Zr |    and so on ...
+            +----+----+----+----+
+
+
+ continued down the whole array. The blank spots will be left in the array to indicate to the final javascript
+ code that that particular table cell will not have an element in it.
+
+ IMPORTANT
+ =========
+ The first element in the array starts at 0, not 1 so the farthest element across the table would be at position 17
+ and not 18
+
+ This means, for example that:
+ H (Hydrogen) will be at position 0,0 (Period 1, Group 1).
+    You would access that through htmlToPrint[0][0]
+
+ He (Helium) will be at position 0,17 (Period 1, Group 8 or 18).
+    You would access that through htmlToPrint[0][17]
+
+ Li (Lithium) will be at position 1,0 (Period 2, Group 1).
+    You would access that through htmlToPrint[1][0]
+
+ etc.
+ */
+
+
+// The variable to generate the data to be turned into table form
+var htmlToPrint = new Array(7);
+for (var i = 0; i < htmlToPrint.length; i++){
+    // Make the array multidimensional due to the square structure of the Periodic Table
+    htmlToPrint[i] = new Array(18)
 }
 
-for(i = 0; i < 2; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 8; j++){
-        console.log(myPTE[el++].letter);
-    }
+// Go through each element in the periodicTableData array and store it in the htmlToPrint array for later printing
+for (var position = 0; position < periodicTableMainData.length; position++){
+    // Get the current element as you loop through the array of data
+    var element = periodicTableMainData[position];
+    // Store the element at a specific place in that multidimensional array
+    htmlToPrint[element.period-1][element.group-1] = element;
 }
+// Print out the array
+console.log(htmlToPrint);
 
-for(i = 0; i < 4; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 18; j++){
-        console.log(myPTE[el++].letter);
+/* ============= */
+/* Generate HTML */
+/* ============= */
+
+// The array that will contain all the HTML code
+var html = "<table>";
+// Go through every period (downwards)
+for(var x = 0; x < htmlToPrint.length; x++){
+    // Every period on the periodic table gets a new table 'row'
+    html += "<tr>";
+    // Loop through the second level of the array, across through all the groups
+    for(var y = 0; y < htmlToPrint[x].length; y++){
+        // Get the element at that specific period, group combination
+        element = htmlToPrint[x][y];
+        // Start a table cell in the specific row
+        html += '<td>';
+        if (element != undefined){
+            html += element.letter;
+        }
+        // End the cell in the specific row
+        html += '</td>';
     }
-};
 
-var el = 0
-
-for(i = 0; i < 2; i++){
-    console.log("row" + row++);
-    for(j = 0; j < 15; j++){
-        console.log(myPTE2[el].letter);
-    }
+    // End the table row as all the cells have been filled
+    html += "</tr>";
 }
+// Close off the table
+html += "</table>";
 
-
-
-
-
-                                                                                                      4
+// Set the pTable div to the html, which should be full of the elements from the first dataset
+document.getElementById('pTable').innerHTML = html;
